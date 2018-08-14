@@ -14,27 +14,20 @@ class App extends Component {
   }
 
   componentDidMount(){
-    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, (tabs) => {
-      let url = tabs[0].url;
-      let title = tabs[0].title;
-      let full = new URL(url);
-      let host = full.hostname;
-      console.log('URL', url);
-      console.log('HOST', host);
-      console.log('TITLE', title);
+    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, tabs => {
+      const url = new URL(tabs[0].url);
+      const domain = url.hostname;
       this.setState({
-        domain: host,
+        domain: domain,
       });
     });
   }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Corporate Ethics Checker</h1>
-        </header>
+        <h1 className="App-title">{this.state.domain}</h1>
         <p className="App-intro">
-          Domain: {this.state.domain}
+          Rating: B
         </p>
       </div>
     );
