@@ -1,0 +1,14 @@
+{
+  "name": "Corporate Ethics Checker",
+  "manifest_version": 2,
+  "version": "0.0.1",
+  "description": "Gives you the ethics rating of the corporation whose site you are on",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [{
+    "js": [ "content.js"],
+    "matches": [ "https://www.allbirds.com/*"]
+   }],
+  "permissions": ["tabs"]
+}
