@@ -10,6 +10,7 @@ class App extends Component {
 
     this.state = {
       domain: '',
+      rating: 'B',
     }
   }
 
@@ -21,13 +22,21 @@ class App extends Component {
         domain: domain,
       });
     });
+    // axios.get(`http://${IP}/api/rating/${domain}`) 
+    //   .then(results => {
+    //     this.setState({
+    //       rating: results.data,
+    //     });
+    //   }).catch(error => {
+    //     console.log('Error in obtaining rating', error);
+    //   });
   }
   render() {
     return (
       <div className="App">
         <h1 className="App-title">{this.state.domain}</h1>
         <p className="App-intro">
-          Rating: B
+          Rating: {this.state.rating}
         </p>
       </div>
     );
