@@ -8,7 +8,8 @@
   },
   "content_scripts": [{
     "js": [ "content.js"],
-    "matches": [ "https://www.allbirds.com/*"]
+    "matches": [ "https://www.allbirds.com/*",
+                "https://www.patagonia.com/*"]
    }],
   "permissions": ["tabs"]
 }

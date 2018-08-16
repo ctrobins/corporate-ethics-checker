@@ -1,7 +1,7 @@
 /* global chrome */
 
-
 import React, { Component } from 'react';
+import IP from './IP.js';
 import './App.css';
 
 class App extends Component {
@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App-title">{this.state.domain}</h1>
-        <p className="App-intro">
+        <p className="App-text">
           Rating: {this.state.rating}
         </p>
       </div>
